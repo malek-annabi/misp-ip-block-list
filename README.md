@@ -19,40 +19,39 @@ This Python script bridges your [MISP](https://github.com/MISP/MISP) (Malware In
 
 Install dependencies:
 
-```
-bash
+<pre>```bash
 pip install pymisp
-```
+```<pre/>
 ---
 
 ## 🚀 Usage
 
 Clone this repository:
 
-```bash
+<pre>```bash
 git clone https://github.com/yourusername/misp-to-fortigate-ebl.git
 cd misp-to-fortigate-ebl
-```
+```<pre/>
 
 Edit the script to configure your MISP instance:
 
-```python
+<pre>```python
 MISP_URL = 'https://your-misp-instance'
 MISP_KEY = 'your_misp_api_key'
 VERIFY_CERT = False
 LISTEN_PORT = 8080
-```
+```<pre/>
 Run the script:
 
-```bash
+<pre>```bash
 python3 misp_ebl_server.py
-```
+```<pre/>
 
 The IOC list will be available at:
 
-```
+<pre>```
 http://<your-ip>:8080/misp_ip_blocklist.txt
-```
+```<pre/>
 ---
 
 ## 🔐 Security Considerations
