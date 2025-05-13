@@ -29,7 +29,7 @@ pip install pymisp
 Clone this repository:
 
 ```bash
-git clone [https://github.com/yourusername/misp-to-fortigate-ebl.git](https://github.com/malek-annabi/misp-ip-block-list.git)
+git clone https://github.com/malek-annabi/misp-ip-block-list.git
 cd misp-ip-block-list
 ```
 
