@@ -17,6 +17,8 @@ This Python script bridges your [MISP](https://github.com/MISP/MISP) (Malware In
 
 [PyMISP](https://github.com/MISP/PyMISP)
 
+PyMISP is distributed under an [open source license](https://github.com/MISP/PyMISP/blob/main/LICENSE)
+
 Install dependencies:
 
 ```bash
