@@ -29,8 +29,8 @@ pip install pymisp
 Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/misp-to-fortigate-ebl.git
-cd misp-to-fortigate-ebl
+git clone [https://github.com/yourusername/misp-to-fortigate-ebl.git](https://github.com/malek-annabi/misp-ip-block-list.git)
+cd misp-ip-block-list
 ```
 
 Edit the script to configure your MISP instance:
@@ -44,7 +44,7 @@ LISTEN_PORT = 8080
 Run the script:
 
 ```bash
-python3 misp_ebl_server.py
+python3 mispv2.py
 ```
 
 The IOC list will be available at:
