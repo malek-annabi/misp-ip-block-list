@@ -94,6 +94,7 @@ config firewall policy
     next
 end
 ```
-📚 License
-## GNU PUBLIC v3.0 License
+---
+## 📚 License
+**GNU PUBLIC v3.0 License**
 
