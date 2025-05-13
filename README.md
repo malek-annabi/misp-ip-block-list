@@ -1,68 +1,73 @@
-🛡️ MISP-to-FortiGate Dynamic IP Threat Feed
-This Python script bridges your MISP (Malware Information Sharing Platform) instance with FortiGate firewalls by exporting dynamic IP threat intelligence lists and serving them via a local HTTP server in a format compatible with FortiGate’s External Block List (EBL) feature.
+## 🛡️ MISP-to-FortiGate Dynamic IP Threat Feed
+This Python script bridges your [MISP](https://github.com/MISP/MISP) (Malware Information Sharing Platform) instance with [FortiGate](https://www.fortinet.com/products/firewall/fortigate) firewalls by exporting dynamic IP threat intelligence lists and serving them via a local HTTP server in a format compatible with FortiGate’s External Block List (EBL) feature.
 
-🔧 Features
-🔁 Automated IOC Refresh: Pulls fresh ip-dst and ip-src attributes from your MISP instance every 15 minutes.
+---
+## 🔧 Features
+🔁 Automated IOC Refresh: Pulls fresh `ip-dst` and `ip-src` attributes from your MISP instance every 15 minutes.
 
-📄 EBL-Compatible Output: Produces a flat, newline-separated IP list (misp_ip_blocklist.txt) readable by FortiGate firewalls.
+- 📄 **EBL-Compatible Output**: Produces a flat, newline-separated IP list (misp_ip_blocklist.txt) readable by FortiGate firewalls.
 
-🌐 Local Web Server: Hosts the IP list on a local HTTP server for easy ingestion by FortiGate.
+- 🌐 **Local Web Server**: Hosts the IP list on a local HTTP server for easy ingestion by FortiGate.
 
-🧵 Multithreaded: Web server and MISP polling run concurrently in separate threads.
+- 🧵 **Multithreaded**: Web server and MISP polling run concurrently in separate threads.
+---
 
-⚙️ Requirements
-Python 3.6+
+## ⚙️ Requirements
+- Python 3.6+
 
-PyMISP
+[PyMISP](https://github.com/MISP/PyMISP)
 
 Install dependencies:
 
+```
 bash
-Copy
-Edit
 pip install pymisp
-🚀 Usage
+```
+---
+
+## 🚀 Usage
+
 Clone this repository:
 
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/yourusername/misp-to-fortigate-ebl.git
 cd misp-to-fortigate-ebl
+```
+
 Edit the script to configure your MISP instance:
 
-python
-Copy
-Edit
+```python
 MISP_URL = 'https://your-misp-instance'
 MISP_KEY = 'your_misp_api_key'
 VERIFY_CERT = False
 LISTEN_PORT = 8080
+```
 Run the script:
 
-bash
-Copy
-Edit
+```bash
 python3 misp_ebl_server.py
+```
+
 The IOC list will be available at:
 
-arduino
-Copy
-Edit
+```
 http://<your-ip>:8080/misp_ip_blocklist.txt
-🔐 Security Considerations
+```
+---
+
+## 🔐 Security Considerations
 ⚠️ Production deployments should use HTTPS and restrict access via firewall rules or IP whitelisting.
 
 🧼 Ensure that your MISP filters out test or low-confidence data before exporting to a production firewall.
 
 🔐 Avoid exposing the HTTP service to the public internet without proper access controls.
 
-🛠️ FortiGate Integration
+---
+
+## 🛠️ FortiGate Integration
 In FortiOS 6.2+:
 
-bash
-Copy
-Edit
+```Fortigate CLI
 config firewall threat-feed
     edit "misp_ip_feed"
         set server "http://<your-ip>:8080/misp_ip_blocklist.txt"
@@ -89,6 +94,7 @@ config firewall policy
         set service "ALL"
     next
 end
+```
 📚 License
-MIT License
+## MIT License
 
