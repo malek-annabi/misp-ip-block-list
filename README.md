@@ -3,7 +3,7 @@ This Python script bridges your [MISP](https://github.com/MISP/MISP) (Malware In
 
 ---
 ## 🔧 Features
-🔁 Automated IOC Refresh: Pulls fresh `ip-dst` and `ip-src` attributes from your MISP instance every 15 minutes.
+- 🔁 **Automated IOC Refresh**: Pulls fresh `ip-dst` and `ip-src` attributes from your MISP instance every 15 minutes.
 
 - 📄 **EBL-Compatible Output**: Produces a flat, newline-separated IP list (misp_ip_blocklist.txt) readable by FortiGate firewalls.
 
