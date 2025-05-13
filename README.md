@@ -95,5 +95,5 @@ config firewall policy
 end
 ```
 📚 License
-## MIT License
+## GNU PUBLIC v3.0 License
 
