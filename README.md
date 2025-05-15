@@ -34,6 +34,11 @@ Clone this repository:
 git clone https://github.com/malek-annabi/misp-ip-block-list.git
 cd misp-ip-block-list
 ```
+Create a text file in the same directory:
+
+```bash
+touch misp_ip_blocklist_v2.txt
+```
 
 Edit the script to configure your MISP instance:
 
