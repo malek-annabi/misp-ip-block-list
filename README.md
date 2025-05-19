@@ -1,3 +1,5 @@
+## Documentation will be updated shortly after the last update : malware hash and malicious domains integration have been added.
+
 ## 🛡️ MISP-to-FortiGate Dynamic IP Threat Feed
 This Python script bridges your [MISP](https://github.com/MISP/MISP) (Malware Information Sharing Platform) instance with [FortiGate](https://www.fortinet.com/products/firewall/fortigate) firewalls by exporting dynamic IP threat intelligence lists and serving them via a local HTTP server in a format compatible with FortiGate’s External Block List (EBL) feature.
 
