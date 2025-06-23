@@ -6,8 +6,8 @@ import os
 
 # -----------------------------
 # MISP Configuration
-MISP_URL = 'https://192.168.122.226/'
-MISP_KEY = 'Pc6wE9WMfXqQPAwtP4RbnNEhXvBZbi0btYG9gFuK'
+MISP_URL = 'https://192.168.150.128/'
+MISP_KEY = 'GlZ4aWljQLsBAMiKSJWGRDYzsSkiFiOgQKh82vtK'
 VERIFY_CERT = False
 EXPORT_FILENAME = 'misp_ip_blocklist_v2.txt'
 DOMAIN_FILE = 'misp_domain_blocklist.txt'
@@ -54,17 +54,17 @@ def fetch_and_export_misp_data():
         domain_attrs = misp.search(controller='attributes', type_attribute=domain_types, pythonify=True)
         for attr in domain_attrs:
             domain_set.add(attr.value.strip())
-
+        print(f"[+] Got {len(domain_set)} unique DOMAINs.")
         # Pull hashes
         hash_attrs = misp.search(controller='attributes', type_attribute=hash_types, pythonify=True)
         for attr in hash_attrs:
             hash_set.add(attr.value.strip().lower())
-
+        print(f"[+] Got {len(hash_set)} unique HASHs.")
         # Write domains
         with open(DOMAIN_PATH, 'w') as f:
             for domain in sorted(domain_set):
                 f.write(domain + '\n')
-
+	
         # Write hashes
         with open(HASH_PATH, 'w') as f:
             for h in sorted(hash_set):
