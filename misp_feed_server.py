@@ -6,8 +6,8 @@ from pymisp import ExpandedPyMISP
 
 # -----------------------------
 # MISP Configuration
-MISP_URL = 'https://192.168.150.128/'
-MISP_KEY = 'GlZ4aWljQLsBAMiKSJWGRDYzsSkiFiOgQKh82vtK'
+MISP_URL = 'https://your_misp_isntance_ip/'
+MISP_KEY = 'your_api_key'
 VERIFY_CERT = False
 
 EXPORT_INTERVAL = 900  # 15 minutes
