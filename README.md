@@ -1,5 +1,3 @@
-## Documentation will be updated shortly after the last update : malware hash and malicious domains integration have been added.
-
 # 🛡️ MISP-to-FortiGate IOC Feed Server
 
 This Python tool bridges your [MISP](https://github.com/MISP/MISP) instance with FortiGate or any platform that supports external threat feeds. It automatically extracts and publishes curated IPs, domains, and malware hashes over HTTP in formats readable by FortiGate's External Block List (EBL).
@@ -11,7 +9,7 @@ This Python tool bridges your [MISP](https://github.com/MISP/MISP) instance with
 - 🧠 **MISP Integration via PyMISP**
 - 🔁 **Auto-refresh every 15 minutes** (customizable)
 - 📤 **Exports to 3 feed files**:
-  - `misp_ip_blocklist_v2.txt`
+  - `misp_ip_blocklist.txt`
   - `misp_domain_blocklist.txt`
   - `misp_hash_blocklist.txt`
 - ✅ **Excludes known safe indicators** using [MISP Warning Lists](https://github.com/MISP/misp-warninglists)
@@ -26,7 +24,7 @@ This Python tool bridges your [MISP](https://github.com/MISP/MISP) instance with
 
 | File | Type | Example Entries |
 |------|------|-----------------|
-| `misp_ip_blocklist_v2.txt` | IP addresses | `8.8.8.8` |
+| `misp_ip_blocklist.txt` | IP addresses | `8.8.8.8` |
 | `misp_domain_blocklist.txt` | Domains | `malicious-site.ru` |
 | `misp_hash_blocklist.txt` | MD5, SHA1, SHA256 | `e99a18c428cb38d5f260853678922e03` |
 
@@ -35,8 +33,8 @@ This Python tool bridges your [MISP](https://github.com/MISP/MISP) instance with
 ## ⚙️ Requirements
 
 - Python 3.6+
-- MISP with API access
-- Enabled warning lists
+- MISP instance which could be installed in a [simple script]((https://misp.github.io/MISP/)) (ubuntu-server 22.04 is recommended for selfhosting)  with [API access](https://www.circl.lu/doc/misp/automation/#automation-api)
+- Enabled [warning lists](https://www.circl.lu/doc/misp/warninglists/)
 - `pymisp` library
 
 ### Install:
@@ -47,7 +45,7 @@ pip install pymisp
 ### 🚀 Usage
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/misp-to-fortigate-ebl.git
+git clone https://github.com/malek-annabi/misp-to-fortigate-ebl.git
 cd misp-to-fortigate-ebl
 ```
 2. Configure your script:
@@ -75,7 +73,7 @@ Export IOC files
 Serve them via HTTP at:
 
 ```arduino
-http://<your-ip>:8080/misp_ip_blocklist_v2.txt
+http://<your-ip>:8080/misp_ip_blocklist.txt
 http://<your-ip>:8080/misp_domain_blocklist.txt
 http://<your-ip>:8080/misp_hash_blocklist.txt
 ```
@@ -95,7 +93,7 @@ Example (for IP feed):
 ```bash
 config firewall threat-feed
     edit "misp_ip_feed"
-        set server "http://<your-ip>:8080/misp_ip_blocklist_v2.txt"
+        set server "http://<your-ip>:8080/misp_ip_blocklist.txt"
         set type ip
     next
 end
@@ -146,11 +144,11 @@ Domains like google.com, microsoft.com, RFC1918 IPs, and public DNS are automati
 🪵 Consider adding logging and a /status endpoint
 
 ## 📜 License
-MIT License
+GPL-3.0 license
 
 ## 🤝 Contributions
 PRs, bug reports, and feature suggestions are welcome!
 
 ## 🧠 Authors & Maintainers
-Built by offensive and defensive security engineers to streamline operational threat intelligence ingestion into enterprise security platforms like FortiGate, WAFs, and SOAR systems.
+Built by network and security engineer to streamline operational threat intelligence ingestion into enterprise security platforms like FortiGate, WAFs, and SOAR systems.
 
