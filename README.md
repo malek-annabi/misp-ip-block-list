@@ -122,6 +122,9 @@ Repeat for misp_domain_blocklist.txt using type domain.
 
 ## 🧠 Monitor in GUI:
 Security Fabric → External Connectors → Threat Feeds
+i'm using the fortios version 7.4.2, it will look like this :
+![image](https://github.com/user-attachments/assets/5ee568f0-f82d-4c11-acf6-e75bc6dd9ea3)
+
 
 ## 📚 Warning List Support
 This project uses the official MISP Warning Lists to eliminate noise and reduce false positives.
