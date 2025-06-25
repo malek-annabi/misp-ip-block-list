@@ -64,7 +64,7 @@ LISTEN_PORT = 8080
 ```bash
 python3 misp_feed_server.py
 ```
-It will:
+## It will:
 
 Query MISP for IPs, domains, hashes from the last 7 days
 
@@ -79,7 +79,7 @@ http://<your-ip>:8080/misp_ip_blocklist_v2.txt
 http://<your-ip>:8080/misp_domain_blocklist.txt
 http://<your-ip>:8080/misp_hash_blocklist.txt
 ```
-🔐 Security Features
+## 🔐 Security Features
 ✅ Filters by timestamp (last 7 days)
 
 ✅ Filters with warning lists (server and client-side)
@@ -90,7 +90,7 @@ http://<your-ip>:8080/misp_hash_blocklist.txt
 
 ✅ RAM-safe: avoids large queries by using filters + deduplication
 
-🛠️ FortiGate Integration (FortiOS 6.2+)
+## 🛠️ FortiGate Integration (FortiOS 6.2+)
 Example (for IP feed):
 ```bash
 config firewall threat-feed
@@ -122,10 +122,10 @@ end
 ```
 Repeat for misp_domain_blocklist.txt using type domain.
 
-🧠 Monitor in GUI:
+## 🧠 Monitor in GUI:
 Security Fabric → External Connectors → Threat Feeds
 
-📚 Warning List Support
+## 📚 Warning List Support
 This project uses the official MISP Warning Lists to eliminate noise and reduce false positives.
 
 It uses both:
@@ -136,7 +136,7 @@ It uses both:
 
 Domains like google.com, microsoft.com, RFC1918 IPs, and public DNS are automatically excluded.
 
-💡 Pro Tips
+## 💡 Pro Tips
 🛑 Don't remove filters or you'll crash your system
 
 ⚠️ Avoid using pythonify=True on unfiltered queries
@@ -145,12 +145,12 @@ Domains like google.com, microsoft.com, RFC1918 IPs, and public DNS are automati
 
 🪵 Consider adding logging and a /status endpoint
 
-📜 License
+## 📜 License
 MIT License
 
-🤝 Contributions
+## 🤝 Contributions
 PRs, bug reports, and feature suggestions are welcome!
 
-🧠 Authors & Maintainers
+## 🧠 Authors & Maintainers
 Built by offensive and defensive security engineers to streamline operational threat intelligence ingestion into enterprise security platforms like FortiGate, WAFs, and SOAR systems.
 
