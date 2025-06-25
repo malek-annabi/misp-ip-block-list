@@ -99,7 +99,7 @@ config firewall threat-feed
 end
 
 config firewall address
-    edit "MISP_IP_List"
+    edit "misp-ips"
         set type external-ip
         set external-ip-blocklist "misp_ip_feed"
     next
@@ -111,14 +111,19 @@ config firewall policy
         set srcintf "port1"
         set dstintf "port2"
         set srcaddr "all"
-        set dstaddr "MISP_IP_List"
+        set dstaddr "misp-ips"
         set action deny
         set schedule "always"
         set service "ALL"
     next
 end
 ```
-Repeat for misp_domain_blocklist.txt using type domain.
+The domain list could be added in a custom dns filter profile which could be added later in a policy : [reference](https://docs.fortinet.com/document/fortigate/7.4.2/administration-guide/195303)
+![image](https://github.com/user-attachments/assets/7fbc21db-a241-4362-bcac-556bcd48444d)
+
+The Hashs list could be added to a custom antivirus profile which also could be added later in a policy :
+![image](https://github.com/user-attachments/assets/62412471-861d-4f43-b0e5-697a288bcd4b)
+
 
 ## 🧠 Monitor in GUI:
 Security Fabric → External Connectors → Threat Feeds
