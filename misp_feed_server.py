@@ -14,7 +14,7 @@ EXPORT_INTERVAL = 900  # 15 minutes
 LISTEN_PORT = 8080
 
 EXPORT_DIR = os.path.abspath(os.path.dirname(__file__))
-EXPORT_PATH = os.path.join(EXPORT_DIR, 'misp_ip_blocklist_v2.txt')
+EXPORT_PATH = os.path.join(EXPORT_DIR, 'misp_ip_blocklist.txt')
 DOMAIN_PATH = os.path.join(EXPORT_DIR, 'misp_domain_blocklist.txt')
 HASH_PATH = os.path.join(EXPORT_DIR, 'misp_hash_blocklist.txt')
 # -----------------------------
