@@ -130,9 +130,9 @@ This project uses the official MISP Warning Lists to eliminate noise and reduce 
 
 It uses both:
 
-enforce_warninglist=True on the MISP server
+`enforce_warninglist=True` on the MISP server
 
-WarningLists().check_value() on the client
+`WarningLists().check_value()` on the client
 
 Domains like google.com, microsoft.com, RFC1918 IPs, and public DNS are automatically excluded.
 
@@ -141,7 +141,7 @@ Domains like google.com, microsoft.com, RFC1918 IPs, and public DNS are automati
 
 ⚠️ Avoid using pythonify=True on unfiltered queries
 
-✅ Always use timestamp + enforce_warninglist + check_value()
+✅ Always use `timestamp` + `enforce_warninglist` + `check_value`
 
 🪵 Consider adding logging and a /status endpoint
 
